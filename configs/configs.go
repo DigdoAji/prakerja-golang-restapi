@@ -6,7 +6,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
-	userdatabase "ujk-golang/models/comic/database"
+	comicdatabase "ujk-golang/models/comic/database"
 )
 
 
@@ -28,5 +28,5 @@ func InitDatabase(){
 }
 
 func Migration(){
-	DB.AutoMigrate(userdatabase.Comic{})
+	DB.AutoMigrate(comicdatabase.Comic{})
 }
