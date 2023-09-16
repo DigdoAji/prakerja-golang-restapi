@@ -12,7 +12,7 @@ import (
 
 
 func main(){
-	loadEnv()
+	// loadEnv()
 	configs.InitDatabase()
 	e := echo.New()
 	routes.InitRoute(e)
@@ -27,10 +27,10 @@ func getPort() string {
 	return ":" + port
 }
 
-func loadEnv(){
-	err := godotenv.Load()
-  	if err != nil {
-    	panic("Error loading .env file")
-  	}
-}
+// func loadEnv(){
+// 	err := godotenv.Load()
+//   	if err != nil {
+//     	panic("Error loading .env file")
+//   	}
+// }
 
