@@ -12,7 +12,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-
+// Get All Comics
 func GetComicsController(c echo.Context) error {
 	var comics []comicdatabase.Comic
 
@@ -33,7 +33,7 @@ func GetComicsController(c echo.Context) error {
 	})
 }
 
-
+// Add New Comic
 func AddComicController(c echo.Context) error {
 	var comicAdd comicrequest.ComicAdd
 	c.Bind(&comicAdd)
@@ -76,7 +76,7 @@ func AddComicController(c echo.Context) error {
 	})
 }
 
-
+// Get Comic Detail by ID
 func GetComicDetailController(c echo.Context) error {
 	comicID := c.Param("id")
 	var comic comicdatabase.Comic
@@ -101,7 +101,7 @@ func GetComicDetailController(c echo.Context) error {
 	})
 }
 
-
+// Update Comic by ID
 func UpdateComicController(c echo.Context) error {
 	comicID := c.Param("id")
 	var comic comicdatabase.Comic
@@ -154,6 +154,7 @@ func UpdateComicController(c echo.Context) error {
 	})
 }
 
+// Delete Comic by ID
 func DeleteComicController(c echo.Context) error {
 	comicID := c.Param("id")
 	var comic comicdatabase.Comic
