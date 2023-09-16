@@ -21,11 +21,11 @@ func (comic *Comic) MapFromAddingComic(comicAdd request.ComicAdd){
 	comic.Completed = comicAdd.Completed
 }
 
-func (comic *Comic) MapFromUpdateComic(comicAdd request.ComicUpdate){
-	comic.Title = comicAdd.Title
-	comic.Author = comicAdd.Author
-	comic.Genre = comicAdd.Genre
-	comic.Category = comicAdd.Category
-	comic.Date_Published = comicAdd.Date_Published
-	comic.Completed = comicAdd.Completed
+func (comic *Comic) MapFromUpdateComic(comicUpdate request.ComicUpdate){
+	comic.Title = comicUpdate.Title
+	comic.Author = comicUpdate.Author
+	comic.Genre = comicUpdate.Genre
+	comic.Category = comicUpdate.Category
+	comic.Date_Published = comicUpdate.Date_Published
+	comic.Completed = comicUpdate.Completed
 }
