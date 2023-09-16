@@ -127,15 +127,12 @@ func UpdateComicController(c echo.Context) error {
 		})
 	}
 
-	var comicDatabase comicdatabase.Comic
-	comicDatabase.Title = comicUpdate.Title
-	comicDatabase.Author = comicUpdate.Author
-	comicDatabase.Genre = comicUpdate.Genre
-	comicDatabase.Category = comicUpdate.Category
-	comicDatabase.Date_Published = comicUpdate.Date_Published
-	comicDatabase.Completed = comicUpdate.Completed
-
-	fmt.Println("Updating info comic in database", comicDatabase)
+	comic.Title = comicUpdate.Title
+	comic.Author = comicUpdate.Author
+	comic.Genre = comicUpdate.Genre
+	comic.Category = comicUpdate.Category
+	comic.Date_Published = comicUpdate.Date_Published
+	comic.Completed = comicUpdate.Completed
 
 	result = configs.DB.Save(&comic)
 
