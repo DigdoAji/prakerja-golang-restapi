@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"ujk-golang/configs"
@@ -10,6 +11,7 @@ import (
 	comicresponse "ujk-golang/models/comic/response"
 
 	"github.com/labstack/echo/v4"
+	"gorm.io/gorm"
 )
 
 // Get All Comics
@@ -84,10 +86,17 @@ func GetComicDetailController(c echo.Context) error {
 	result := configs.DB.First(&comic, comicID)
 
 	if result.Error != nil {
-		return c.JSON(http.StatusNotFound, comicbase.BaseResponse{
-			Status: false,
-			Message: "Detail comic not found",
-			Data: nil,
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return c.JSON(http.StatusNotFound, comicbase.BaseResponse{
+				Status:  false,
+				Message: "Comic not found",
+				Data:    nil,
+			})
+		}
+		return c.JSON(http.StatusInternalServerError, comicbase.BaseResponse{
+			Status:  false,
+			Message: "Failed to get comic details by ID",
+			Data:    nil,
 		})
 	}
 
@@ -109,10 +118,17 @@ func UpdateComicController(c echo.Context) error {
 	result := configs.DB.First(&comic, comicID)
 
 	if result.Error != nil {
-		return c.JSON(http.StatusNotFound, comicbase.BaseResponse{
-			Status: false,
-			Message: "Detail comic not found",
-			Data: nil,
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return c.JSON(http.StatusNotFound, comicbase.BaseResponse{
+				Status:  false,
+				Message: "Comic not found",
+				Data:    nil,
+			})
+		}
+		return c.JSON(http.StatusInternalServerError, comicbase.BaseResponse{
+			Status:  false,
+			Message: "Failed to get comic details by ID",
+			Data:    nil,
 		})
 	}
 
@@ -162,10 +178,17 @@ func DeleteComicController(c echo.Context) error {
 	result := configs.DB.First(&comic, comicID)
 
 	if result.Error != nil {
-		return c.JSON(http.StatusNotFound, comicbase.BaseResponse{
-			Status: false,
-			Message: "Detail comic not found",
-			Data: nil,
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return c.JSON(http.StatusNotFound, comicbase.BaseResponse{
+				Status:  false,
+				Message: "Comic not found",
+				Data:    nil,
+			})
+		}
+		return c.JSON(http.StatusInternalServerError, comicbase.BaseResponse{
+			Status:  false,
+			Message: "Failed to get comic details by ID",
+			Data:    nil,
 		})
 	}
 
