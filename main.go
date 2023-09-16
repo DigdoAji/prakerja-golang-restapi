@@ -22,7 +22,7 @@ func main(){
 func getPort() string {
 	port := os.Getenv("PORT")
 	if port == "" {
-		return ":3030"
+		return ":8000"
 	}
 	return ":" + port
 }
