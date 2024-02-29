@@ -1,4 +1,4 @@
-# BerbagiBeasiswa
+# ComicShelf API using Golang (GO)
 
 This project is Self-Skills Demonstration Assignment by creating a Back-End API using Golang (GO) Programming Language at "Berkarir Sebagai Backend Engineer dengan Golang" Course Class at Alterra Academy (Prakerja Program). Tech Stack Used: Golang (GO), GORM, & MySQL.
 
