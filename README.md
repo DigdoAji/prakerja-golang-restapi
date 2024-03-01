@@ -4,7 +4,7 @@ This project is Self-Skills Demonstration Assignment by creating a Back-End API 
 
 ## Information Project
 - Presentation/Demo Video   : https://drive.google.com/file/d/18T4nn_7ApFiPsS2B_rXyvkWI3EQcJaex/view?usp=sharing
-- API Key                   : https://prakerja10-golang-api.osc-fr1.scalingo.io/comics
+- API Endpoint              : https://prakerja10-golang-api.osc-fr1.scalingo.io/comics
 
 ## Tech Stacks Used
 ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
@@ -12,5 +12,5 @@ This project is Self-Skills Demonstration Assignment by creating a Back-End API 
 
 ## Status Project
 
-- Does it have an API Key? : `Yes`
-- Is the API Key still active now? : `No`
+- Does it have an API Endpoint? : `Yes`
+- Is the API Endpoint still active now? : `No`
